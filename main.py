@@ -7,12 +7,11 @@ from fastapi import Query
 from fastapi.staticfiles import StaticFiles
 
 
-api = BalldontlieAPI(api_key="c9f755a9-862c-48ad-b1d9-bd5c96abbc04")
+api = BalldontlieAPI(api_key="YOUR_API_KEY")
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
-#my api - c9f755a9-862c-48ad-b1d9-bd5c96abbc04
 
 @app.get("/", response_class=HTMLResponse)
 def root(request: Request):
